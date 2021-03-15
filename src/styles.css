@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+footer{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    /* font-size: 24px; */
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    color: #D9CAAD;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #2C4C59;
+}
+
+/* css navbar */
+.nav-link {
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    color: #D9CAAD!important;
+}
+#navbar {
+    background: #2C4C59!important;
+}
+#navbarDropdown{
+    font-weight: 700;
+
+    /* margin-left: 500%; */
+    background: #FFAE3F;
+    border-radius: 30px;
+}
+
+/* css Login */
+#login{
+    /* position: absolute; */
+    color: black;
+    
+}
+
+
+@media(max-width: 991px ){
+    .hideFooter{
+        display:none ;
+    }
+}

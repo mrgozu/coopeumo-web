@@ -14,6 +14,8 @@ import { EmDashComponent } from './components/dashboard/em/em.component';
 import { AlertDetailComponent } from './components/dashboard/detail/alert-detail/alert-detail.component';
 import { DataComponent } from './components/dashboard/detail/data/data.component';
 import { GraphComponent } from './components/dashboard/detail/graph/graph.component';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/shared/navbar/login.component';
 
 @NgModule({
   declarations: [
@@ -29,10 +31,12 @@ import { GraphComponent } from './components/dashboard/detail/graph/graph.compon
     SegComponent,
     AlertDetailComponent,
     DataComponent,
-    GraphComponent
+    GraphComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
