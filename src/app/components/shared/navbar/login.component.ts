@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
               <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
             </div>
             <div class="mb-3">
-              <label for="exampleDropdownFormPassword1" class="form-label">Constraseña</label>
+              <label for="exampleDropdownFormPassword1" class="form-label">Contraseña</label>
               <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
             </div>
             <div class="mb-3">
@@ -20,7 +20,7 @@ import { Component, OnInit } from '@angular/core';
                 </label>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-warning">Sign in</button>
           </form>
   `,
   styles: [

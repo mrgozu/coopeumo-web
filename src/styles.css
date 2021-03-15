@@ -14,6 +14,15 @@ footer{
     background-color: #2C4C59;
 }
 
+form{
+    min-width: 230px!important;
+    background-color: #2C4C59;
+}
+.actual{
+    text-decoration-line: underline!important;
+    
+}
+
 /* css navbar */
 .nav-link {
     
@@ -40,7 +49,9 @@ footer{
 /* css Login */
 #login{
     /* position: absolute; */
-    color: black;
+    color: white;
+    background-color:#2C4C59;
+    border-color: white;
     
 }
 

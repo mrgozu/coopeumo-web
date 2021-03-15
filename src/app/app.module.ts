@@ -16,6 +16,9 @@ import { DataComponent } from './components/dashboard/detail/data/data.component
 import { GraphComponent } from './components/dashboard/detail/graph/graph.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/shared/navbar/login.component';
+import { HomeComponent } from './pages/home/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,10 +35,13 @@ import { LoginComponent } from './components/shared/navbar/login.component';
     AlertDetailComponent,
     DataComponent,
     GraphComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule
   ],
   providers: [],
