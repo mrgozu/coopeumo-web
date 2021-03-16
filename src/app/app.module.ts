@@ -20,6 +20,12 @@ import { HomeComponent } from './pages/home/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
+// aws
+import Amplify from "aws-amplify";
+import awsconfig from "../aws-exports";
+
+Amplify.configure(awsconfig);
+
 @NgModule({
   declarations: [
     AppComponent,
