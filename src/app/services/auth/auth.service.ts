@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {Auth} from 'aws-amplify'
 import { UsuarioModel } from '../../models/usuario.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   async signIn(usuario: UsuarioModel):Promise<any> {
         let user = await Auth.signIn(usuario.nombre,usuario.password);
@@ -35,6 +36,7 @@ export class AuthService {
             ).then(user => {
                 
                 console.log(user);
+                this.router.navigate(['dashboard']);
             }).catch(e => {
               console.log(e);
             });

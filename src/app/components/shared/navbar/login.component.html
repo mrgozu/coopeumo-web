@@ -40,6 +40,9 @@
     <button  type="submit" class="btn btn-warning">
       Sign in
     </button>
+    <div *ngIf=true class="spinner-border float-right" role="status">
+      <span class="sr-only">Loading...</span>
+  </div>
   </form>
 
   <form *ngIf="requiereNuevaPassword=='NEW_PASSWORD_REQUIRED'" #f2="ngForm" (ngSubmit)="onSubmitNueva( f2 )" class="px-4 py-3" >

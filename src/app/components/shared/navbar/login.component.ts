@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
         .then((resp)=>{
           // console.log(resp);
           this.loading = false; 
-
+          this.router.navigate(['dashboard']);
           this.requiereNuevaPassword = resp.challengeName;
         })
         .catch((err)=>{
