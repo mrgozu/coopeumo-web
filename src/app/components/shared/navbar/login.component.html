@@ -1,4 +1,4 @@
-<form #f="ngForm" (ngSubmit)="onSubmit( f )" class="px-4 py-3" >
+<form *ngIf="requiereNuevaPassword!='NEW_PASSWORD_REQUIRED'" #f="ngForm" (ngSubmit)="onSubmit( f )" class="px-4 py-3" >
     <span  *ngIf="f.submitted && f.controls['nombre'].errors" class="text-danger">Falta USUARIO</span>
     <div class="mb-3">
         <label for="user" class="form-label">Usuario</label>
@@ -39,5 +39,25 @@
     </div>
     <button  type="submit" class="btn btn-warning">
       Sign in
+    </button>
+  </form>
+
+  <form *ngIf="requiereNuevaPassword=='NEW_PASSWORD_REQUIRED'" #f2="ngForm" (ngSubmit)="onSubmitNueva( f2 )" class="px-4 py-3" >
+    <span *ngIf="f2.submitted && f2.controls['password'].errors"  class="text-danger">Falta CONTRASEÑA </span>
+    <div class="mb-3">
+      <label for="nuevaPassword" class="form-label">Nueva Contraseña</label>
+      <input
+        type="password"
+        class="form-control"
+        id="nuevaPassword"
+        name="nuevaPassword"
+        required
+        [(ngModel)]="usuario.nuevaPassword"
+        placeholder="*******"
+
+      />
+    </div>
+    <button  type="submit" class="btn btn-warning">
+      Cambiar Contraseña
     </button>
   </form>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+//  Componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
@@ -19,12 +20,25 @@ import { LoginComponent } from './components/shared/navbar/login.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+//  -------------------
+
 
 // aws
-import Amplify from "aws-amplify";
-import awsconfig from "../aws-exports";
+// import Amplify from "aws-amplify";
+// import awsconfig from "../aws-exports";
+// Amplify.configure(awsconfig);
+import Amplify, {Auth} from "aws-amplify";
+Amplify.configure({
+  Auth:{
+    mandatorySignIn:true,
+    region: 'us-east-1',
+    userPoolId: 'us-east-1_WFwpKq7KX',
+    userPoolWebClientId:'33t0mqqrjreabl40v7fvhj2uhc',
+    authenticationFlowType:'USER_PASSWORD_AUTH'
+  }
+})
 
-Amplify.configure(awsconfig);
+//  -------------------
 
 @NgModule({
   declarations: [
