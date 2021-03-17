@@ -4,13 +4,14 @@ footer{
     font-style: normal;
     font-weight: 600;
     /* font-size: 24px; */
-    display: flex;
+    /* display: flex; */
     align-items: center;
     text-align: justify;
     color: #D9CAAD;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0px;
     width: 100%;
+    margin-top: 0px;
     background-color: #2C4C59;
 }
 
