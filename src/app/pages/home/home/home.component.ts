@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-home',
   template: `
     <app-carousel></app-carousel>
+    <app-carousel></app-carousel>
+
     <app-em></app-em>
   `,
   styles: [

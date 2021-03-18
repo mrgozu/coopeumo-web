@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   constructor(private router:Router) { }
-
+  status = localStorage.getItem('isAuthentic')||'false';
   async signIn(usuario: UsuarioModel):Promise<any> {
         let user = await Auth.signIn(usuario.nombre,usuario.password);
         // console.log(user);;
@@ -34,9 +34,12 @@ export class AuthService {
                 
                 
             ).then(user => {
-                
+                localStorage.setItem('isAuthentic','false');
                 console.log(user);
-                this.router.navigate(['dashboard']);
+                this.signOut();
+                window.location.replace('/home');
+
+                // this.router.navigate(['dashboard']);
             }).catch(e => {
               console.log(e);
             });
@@ -50,6 +53,17 @@ export class AuthService {
 
     return user;
   }
+  async signOut() {
+    try {
+        await Auth.signOut();
+        localStorage.setItem('isAuthentic','false');
+        this.router.navigate(['/home'])
+
+    } catch (error) {
+        console.log('error signing out: ', error);
+    }
+}
+
 
 
 }

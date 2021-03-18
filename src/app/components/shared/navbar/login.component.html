@@ -1,66 +1,90 @@
-<form *ngIf="requiereNuevaPassword!='NEW_PASSWORD_REQUIRED'" #f="ngForm" (ngSubmit)="onSubmit( f )" class="px-4 py-3" >
-    <span  *ngIf="f.submitted && f.controls['nombre'].errors" class="text-danger">Falta USUARIO</span>
-    <div class="mb-3">
-        <label for="user" class="form-label">Usuario</label>
-
-      <input
-        type="text"
-        class="form-control"
-        id="user"
-        name="nombre"
-        required
-        [(ngModel)]="usuario.nombre"
-        placeholder="Nombre"
-      />
-    </div>
-    <hr>
-
-    <span *ngIf="f.submitted && f.controls['password'].errors"  class="text-danger">Falta CONTRASEÑA </span>
-    <div class="mb-3">
-      <label for="password" class="form-label">Contraseña</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        name="password"
-        required
-        [(ngModel)]="usuario.password"
-        placeholder="*******"
-
-      />
-    </div>
-    <div class="mb-3">
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="dropdownCheck" />
-        <label class="form-check-label" for="dropdownCheck">
-          Remember me
-        </label>
+<div  class="dropdown dropstart navbar-nav  mx-auto me-2 mb-2 mb-lg-0 ">
+  <div *ngIf="authenticated==='false'">
+    <a   class="btn btn-warning" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"    >
+      Conectar
+    </a>
+  <ul  class="dropdown-menu  " id="login" aria-labelledby="navbarDropdown">
+  
+    <form *ngIf="requiereNuevaPassword!='NEW_PASSWORD_REQUIRED'" #f="ngForm" (ngSubmit)="onSubmit( f )" class="px-4 py-3" >
+      <span  *ngIf="f.submitted && f.controls['nombre'].errors" class="text-danger">Falta USUARIO</span>
+      <div class="mb-3">
+          <label for="user" class="form-label">Usuario</label>
+  
+        <input
+          type="text"
+          class="form-control"
+          id="user"
+          name="nombre"
+          required
+          [(ngModel)]="usuario.nombre"
+          placeholder="Nombre"
+        />
       </div>
+      <hr>
+  
+      <span *ngIf="f.submitted && f.controls['password'].errors"  class="text-danger">Falta CONTRASEÑA </span>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+          [(ngModel)]="usuario.password"
+          placeholder="*******"
+  
+        />
+      </div>
+      <!-- <div class="mb-3">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="dropdownCheck" />
+          <label class="form-check-label" for="dropdownCheck">
+            Remember me
+          </label>
+        </div>
+      </div> -->
+      <button  type="submit" class="btn btn-warning buttonNavbar">
+        Acceder
+      </button>
+      <div *ngIf=loading class="spinner-border float-end me-auto text-light  " role="status">
+        <span class="visually-hidden">Loading...</span>
     </div>
-    <button  type="submit" class="btn btn-warning">
-      Sign in
-    </button>
-    <div *ngIf=true class="spinner-border float-end me-auto text-light  " role="status">
-      <span class="visually-hidden">Loading...</span>
+    </form>
+  
+    <form *ngIf="requiereNuevaPassword=='NEW_PASSWORD_REQUIRED'" #f2="ngForm" (ngSubmit)="onSubmitNueva( f2 )" class="px-4 py-3" >
+      <span *ngIf="f2.submitted && f2.controls['password'].errors"  class="text-danger">Falta CONTRASEÑA </span>
+      <div class="mb-3">
+        <label for="nuevaPassword" class="form-label">Nueva Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          id="nuevaPassword"
+          name="nuevaPassword"
+          required
+          [(ngModel)]="usuario.nuevaPassword"
+          placeholder="*******"
+  
+        />
+      </div>
+      <button  type="submit" class="btn btn-warning">
+        Cambiar Contraseña
+      </button>
+    </form>  
+  </ul>
   </div>
-  </form>
+  
+<a  *ngIf="authenticated==='true'" class="btn btn-warning buttonNavbar" (click)="disconect()"  role="button"  >
+  Desconectar
+</a>
 
-  <form *ngIf="requiereNuevaPassword=='NEW_PASSWORD_REQUIRED'" #f2="ngForm" (ngSubmit)="onSubmitNueva( f2 )" class="px-4 py-3" >
-    <span *ngIf="f2.submitted && f2.controls['password'].errors"  class="text-danger">Falta CONTRASEÑA </span>
-    <div class="mb-3">
-      <label for="nuevaPassword" class="form-label">Nueva Contraseña</label>
-      <input
-        type="password"
-        class="form-control"
-        id="nuevaPassword"
-        name="nuevaPassword"
-        required
-        [(ngModel)]="usuario.nuevaPassword"
-        placeholder="*******"
+</div>
 
-      />
-    </div>
-    <button  type="submit" class="btn btn-warning">
-      Cambiar Contraseña
-    </button>
-  </form>
+
+
+
+<!-- <div>
+  <button>
+    Desconectar
+  </button>
+</div> -->

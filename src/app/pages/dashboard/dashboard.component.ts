@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   template: `
-    <p>
-      dashboard works!
-    </p>
+    <app-alert></app-alert>
+    <app-emDashboard></app-emDashboard>
+
   `,
   styles: [
   ]

@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+main{
+    /* padding-bottom: inherit;  */
+}
 footer{
     font-family: Roboto;
     font-style: normal;
@@ -9,9 +12,9 @@ footer{
     text-align: justify;
     color: #D9CAAD;
     /* position: fixed; */
-    bottom: 0px;
-    width: 100%;
-    margin-top: 0px;
+    /* bottom: 0px;*/
+    width: 100%; 
+    /* margin-top: 0px; */
     background-color: #2C4C59;
 }
 
@@ -23,19 +26,36 @@ form{
     text-decoration-line: underline!important;
     
 }
-
 /* css navbar */
+/* .navbar-toggler-icon{
+    background-color: #FFAE3F!important;
+} */
+.titleNav{
+    color: #D9CAAD!important;
+    font-family: Roboto;
+    font-style: oblique;
+    font-weight: 600;
+}
 .nav-link {
     
     font-family: Roboto;
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    /* font-size: 24px; */
     display: flex;
     align-items: center;
     text-align: justify;
     color: #D9CAAD!important;
 }
+
+.buttonNavbar{
+    font-weight: 700!important;
+
+    /* margin-left: 500%; */
+    background: #FFAE3F!important;
+    border-radius: 30px!important;
+}
+
 #navbar {
     background: #2C4C59!important;
 }
@@ -58,7 +78,7 @@ form{
 
 
 @media(max-width: 991px ){
-    .hideFooter{
+    .hide{
         display:none ;
     }
 }

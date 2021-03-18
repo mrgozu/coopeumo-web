@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioModel } from '../../../models/usuario.model';
-import {Auth} from 'aws-amplify'
 import { AuthService } from '../../../services/auth/auth.service';
 @Component({
   selector: 'app-login',
@@ -10,27 +9,45 @@ import { AuthService } from '../../../services/auth/auth.service';
   styles: [],
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private auth: AuthService) {}
+  
+  @Output() status = new EventEmitter<string>();
+  authenticated =  localStorage.getItem('isAuthentic')  || 'false';
+  
   usuario: UsuarioModel;
   requiereNuevaPassword: string;
   loading = false;
+  
+  constructor(private router: Router, private auth: AuthService) {
+  }
+  
   ngOnInit(): void {
     this.usuario = new UsuarioModel();
   }
 
   onSubmit(form:NgForm) {
-
+    
     this.loading = true; 
     this.auth.signIn(this.usuario)
         .then((resp)=>{
           // console.log(resp);
-          this.loading = false; 
-          this.router.navigate(['dashboard']);
+          this.loading = false;
+          localStorage.setItem('isAuthentic', 'true'); 
+          this.status.emit(this.authenticated)
+
+          this.router.navigate(['dashboard']);          
           this.requiereNuevaPassword = resp.challengeName;
+          if (this.requiereNuevaPassword!= 'NEW_PASSWORD_REQUIRED'){
+            this.authenticated =  localStorage.getItem('isAuthentic');
+          this.status.emit(this.authenticated)
+            
+          }
+          
         })
         .catch((err)=>{
+          localStorage.setItem('isAuthentic', 'false'); 
+          this.status.emit(this.authenticated)
           this.loading = false; 
-          console.log(err)
+          alert(err.message)
         });
 
 
@@ -39,8 +56,22 @@ export class LoginComponent implements OnInit {
     // })
     }
     onSubmitNueva(form:NgForm){
-      this.auth.changePassword(this.usuario);
-         
+      this.auth.changePassword(this.usuario)
+          .then(()=>{
+            this.authenticated =  localStorage.getItem('isAuthentic');
+            this.status.emit(this.authenticated)
+     });
+   
+    }
+    disconect(){
+      this.usuario.nombre = '';
+      this.usuario.password = '';
+      this.usuario.nuevaPassword = ''
+      this.auth.signOut()
+          .then(()=>{
+            this.authenticated =  localStorage.getItem('isAuthentic');
+            this.status.emit(this.authenticated)
+          });
     }
 
 

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AuthService } from '../../../services/auth/auth.service';
+import { LoginComponent } from './login.component';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
-
+  
+  authenticated= localStorage.getItem('isAuthentic');
+  constructor(private auth: AuthService) { }
   ngOnInit(): void {
+    console.log(this.authenticated);
+  }
+
+  disconect(){
+    this.auth.signOut();
+  }
+  recieveStatus($event){
+    this.authenticated =$event;
+    console.log('recieved'+ this.authenticated);
   }
 
 }
