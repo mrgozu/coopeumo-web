@@ -1,0 +1,5 @@
+{
+    "tableName": "sensoresdb",
+    "partitionKeyName": "nombre",
+    "partitionKeyType": "S"
+}

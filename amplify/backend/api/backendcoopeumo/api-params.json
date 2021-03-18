@@ -1,0 +1,61 @@
+{
+    "paths": [
+        {
+            "name": "/em",
+            "lambdaFunction": "backendcoopeumofunction",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/em"
+        },
+        {
+            "name": "/rfid",
+            "lambdaFunction": "backendcoopeumofunction",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/sensores",
+            "lambdaFunction": "sensorescoopeumo",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "backendcoopeumo",
+    "apiName": "backendcoopeumo",
+    "functionArns": [
+        {
+            "lambdaFunction": "backendcoopeumofunction"
+        },
+        {
+            "lambdaFunction": "sensorescoopeumo"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-websistemacoopeumo-dev-232905-authRole",
+        "unAuthRoleName": "amplify-websistemacoopeumo-dev-232905-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "backendcoopeumofunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "sensorescoopeumo",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "3d8f5dc0"
+}

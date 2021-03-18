@@ -76,6 +76,11 @@ form{
     
 }
 
+/* css info */
+.textInfo{
+    color: #2C4C59;
+    text-align: justify;
+}
 
 @media(max-width: 991px ){
     .hide{

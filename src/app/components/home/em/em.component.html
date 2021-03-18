@@ -1,24 +1,24 @@
 <div class="card text-dark bg-warning mb-3" >
-    <div class="card-header fw-bold text-center">Temperatura actual registrada por la Estación meteorológica, <i class="mdi mdi-calendar-clock"></i> Fecha: 03:00, 17/03/2021</div>
+    <div class="card-header fw-bold text-center">Temperatura actual registrada por la Estación meteorológica, <i class="mdi mdi-calendar-clock"></i> Fecha: {{estacionMetereologica.fechaHora ||''}}</div>
     <div class="card-body">
-      <div class="row ">
-        <div class="col fw-bolder ">
-            Texto 1
+      <div class="row " style="white-space: nowrap;">
+        <div class="col fw-bolder" >
+            <i class="mdi mdi-weather-sunny"></i> Temperatura {{estacionMetereologica.temperatura | converter: 'C'}}°C
         </div>
         <div class="col fw-bolder">
-            Texto 1
+            <i class="mdi mdi-water"> </i> Humedad: {{estacionMetereologica.humedad}}%
         </div>
         <div class="col fw-bolder">
-            Texto 1
+            <i class="mdi mdi-cloud"> </i> LLuvia: {{estacionMetereologica.lluvia*10}} mm
         </div>
         <div class="col fw-bolder">
-            Texto 1
+            <i class="mdi mdi-thermometer"> </i> Sensación térmica: {{estacionMetereologica.sensacionTermica | converter: 'C' }} °C
         </div>
         <div class="col fw-bolder">
-            Texto 1
+            <i class="mdi mdi-call-missed"> </i> Indice UV: {{estacionMetereologica.indiceUv}}
         </div>
-        <div class="col fw-bolder">
-            Texto 1
+        <div class="col fw-bolder" >
+            <i class="mdi mdi-format-vertical-align-center"> </i> Presión atmosférica: {{estacionMetereologica.presionAtmosferica | converter: 'hPa'}} hPA
         </div>
         
       </div>

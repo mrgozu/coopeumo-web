@@ -28,6 +28,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 // import awsconfig from "../aws-exports";
 // Amplify.configure(awsconfig);
 import Amplify, {Auth} from "aws-amplify";
+import { ConverterPipe } from './pipes/converter.pipe';
 Amplify.configure({
   Auth:{
     mandatorySignIn:true,
@@ -35,7 +36,16 @@ Amplify.configure({
     userPoolId: 'us-east-1_WFwpKq7KX',
     userPoolWebClientId:'33t0mqqrjreabl40v7fvhj2uhc',
     authenticationFlowType:'USER_PASSWORD_AUTH'
-  }
+  },
+  API: {
+    endpoints: [
+        {
+            name: "backendcoopeumo",
+            endpoint: "https://tqykvh1m91.execute-api.us-east-1.amazonaws.com/dev",
+            region: "us-east-1"
+        }
+    ]
+}
 })
 
 //  -------------------
@@ -57,7 +67,8 @@ Amplify.configure({
     GraphComponent,
     LoginComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    ConverterPipe
   ],
   imports: [
     BrowserModule,
