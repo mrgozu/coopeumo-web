@@ -1,1 +1,38 @@
-<p>em works!</p>
+    <div class="card h-auto  ">
+        <a class="card-header headerEstacion text-white text-center fw-bold text-decoration-none mb-2"> Estación meteorológica  (+) </a>
+        <div class="card-body text-white bodyEstacion" >
+            <h5 class="card-text text-card-color "><i class="mdi mdi-calendar-clock text-card-color "></i> Fecha: {{estacionMetereologica.fechaHora}}</h5>
+            <div class="row " style="white-space: nowrap;">
+                <div class="col text-center">
+                    <h3>{{estacionMetereologica.temperatura| converter: 'C'}}°C</h3>
+                    <p>Temperatura</p>
+                </div>
+                <div class="col text-center">
+                    <h3>{{estacionMetereologica.humedad}}%</h3>
+                    <p>Humedad</p>
+                     
+                </div>
+                <div class="col">
+                    <div class="row ">
+                        <i class="mdi mdi-cloud "> LLuvia: {{estacionMetereologica.lluvia*10}} mm </i>
+                    </div>
+                    <div class="row">
+                        <i class="mdi mdi-thermometer">Sensación térmica: {{estacionMetereologica.sensacionTermica | converter: 'C'}}°C </i> 
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <i class="mdi mdi-call-missed">Indice UV: {{estacionMetereologica.indiceUv}} </i> 
+                    </div>
+                    <div class="row">
+                        <i class="mdi mdi-format-vertical-align-center">Presión atmosférica: {{estacionMetereologica.presionAtmosferica | converter: 'hPa'}}hPA </i> 
+                    </div>
+                </div>
+    
+                
+            </div>
+                
+    
+        </div>
+    </div>
+

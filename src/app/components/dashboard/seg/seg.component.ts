@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-seg',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class SegComponent implements OnInit {
-
+  @Input() numeroSegmento:number;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackApiService } from '../../../services/data/back-api.service';
+import { DataEmModel } from '../../../models/dataEm.model';
 
 @Component({
   selector: 'app-em',
@@ -9,7 +10,7 @@ import { BackApiService } from '../../../services/data/back-api.service';
 })
 export class EmComponent implements OnInit {
   intervalo;  
-  estacionMetereologica;
+  estacionMetereologica = new DataEmModel();
   constructor(private api:BackApiService) {
     this.api.getData()
     .then((data)=>this.estacionMetereologica=data);
@@ -20,7 +21,14 @@ export class EmComponent implements OnInit {
       this.api.getData()
         .then((data)=>this.estacionMetereologica=data);
     },5000)
+
   }
+  ngOnDestroy(): void {
+ 
+    clearInterval(this.intervalo);
+    
+  }
+
 
   
   

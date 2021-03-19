@@ -82,6 +82,31 @@ form{
     text-align: justify;
 }
 
+/* css alert */
+.headerAlert{
+    background-color: #011640!important;
+ ;
+}
+.bodyAlert{
+
+}
+/* css dashboard*/
+.headerEstacion{
+    background-color: #5b819c!important;
+    
+}
+.bodyEstacion{
+    background-color:#64a5c6!important;
+
+}
+.headerSegmentos{
+    background-color: #00a09a!important;
+
+}
+.bodySegmentos{
+    background-color: #7EC1BD;
+}
+
 @media(max-width: 991px ){
     .hide{
         display:none ;

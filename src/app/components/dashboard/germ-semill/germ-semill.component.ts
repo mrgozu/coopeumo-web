@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class GermSemillComponent implements OnInit {
-
+  fechaActual = new Date();
   constructor() { }
 
   ngOnInit(): void {

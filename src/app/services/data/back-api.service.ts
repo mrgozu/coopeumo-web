@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { API } from 'aws-amplify';
+import { DataEmModel } from 'src/app/models/dataEm.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +9,7 @@ export class BackApiService {
   constructor() { }
 
 
-  async getData():Promise<any> { 
+  async getData():Promise<DataEmModel> { 
     let apiName = 'backendcoopeumo';
     let path = '/em';
     let myInit = { // OPTIONAL
@@ -17,7 +18,7 @@ export class BackApiService {
     return await API.get(apiName, path, myInit)
             .then((data)=>data[0])
             .then((data)=>{
-
+              // console.log(data);
               return (
               {
                 temperatura:data.outTemp,
