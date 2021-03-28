@@ -29,6 +29,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 // Amplify.configure(awsconfig);
 import Amplify, {Auth} from "aws-amplify";
 import { ConverterPipe } from './pipes/converter.pipe';
+import { RiegoComponent } from './components/dashboard/demostraciones/riego/riego.component';
+import { TrazabilidadComponent } from './components/dashboard/demostraciones/trazabilidad/trazabilidad.component';
 Amplify.configure({
   Auth:{
     mandatorySignIn:true,
@@ -68,7 +70,9 @@ Amplify.configure({
     LoginComponent,
     HomeComponent,
     DashboardComponent,
-    ConverterPipe
+    ConverterPipe,
+    RiegoComponent,
+    TrazabilidadComponent
   ],
   imports: [
     BrowserModule,

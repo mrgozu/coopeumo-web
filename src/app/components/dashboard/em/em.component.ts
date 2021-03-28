@@ -11,7 +11,7 @@ import { BackApiService } from '../../../services/data/back-api.service';
 export class EmDashComponent implements OnInit {
 
   intervalo;  
-  estacionMetereologica = new DataEmModel();
+  estacionMetereologica = new DataEmModel().epoch;
   constructor(private api:BackApiService) {
     this.api.getData()
     .then((data)=>this.estacionMetereologica=data);

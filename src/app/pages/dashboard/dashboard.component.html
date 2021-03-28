@@ -1,0 +1,19 @@
+<div class="container ">
+    <app-alert ></app-alert>
+    <div class="card-group ">
+      <app-germ-semill [titulo]="'Camara Germinadora'" class="w-25 " ></app-germ-semill> 
+      <app-germ-semill [titulo]="'Camara Semilladora'" class="w-25 "></app-germ-semill>    
+      <app-emDashboard class="w-50 "></app-emDashboard>    
+    </div>
+    <div class="card-group mt-2 ">
+      <app-seg *ngFor="let segmento of segmentos" [numeroSegmento]="segmento" class="w-25 " ></app-seg> 
+    </div>
+    <div    class="card text-white text-center m-3" 
+            style="font-size: large; background-color: #f28668; font-weight: bold;">
+            Demostraciones
+    </div>
+    <div class="row">
+        <app-riego class="col col-lg-3 "></app-riego> 
+        <app-trazabilidad class="col col-lg-9"></app-trazabilidad>
+    </div>
+  </div>

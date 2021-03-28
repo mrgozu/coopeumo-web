@@ -107,6 +107,14 @@ form{
     background-color: #7EC1BD;
 }
 
+.card-demostraciones-header{
+    background-color: #f8b365!important;
+}
+.card-demostraciones-body{
+    background-color: #edca9a!important;
+
+}
+
 @media(max-width: 991px ){
     .hide{
         display:none ;

@@ -1,6 +1,6 @@
 <div class="card text-dark bg-warning mb-3" >
     <div class="card-header fw-bold text-center">Temperatura actual registrada por la Estación meteorológica, <i class="mdi mdi-calendar-clock"></i> Fecha: {{estacionMetereologica.fechaHora ||''}}</div>
-    <div class="card-body">
+    <div class="card-body text-center">
       <div class="row " style="white-space: nowrap;">
         <div class="col fw-bolder" >
             <i class="mdi mdi-weather-sunny"></i> Temperatura {{estacionMetereologica.temperatura | converter: 'C'}}°C
