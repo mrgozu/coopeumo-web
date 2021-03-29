@@ -31,6 +31,9 @@ import Amplify, {Auth} from "aws-amplify";
 import { ConverterPipe } from './pipes/converter.pipe';
 import { RiegoComponent } from './components/dashboard/demostraciones/riego/riego.component';
 import { TrazabilidadComponent } from './components/dashboard/demostraciones/trazabilidad/trazabilidad.component';
+import { ChartsModule } from 'ng2-charts';
+import { DetailComponent } from './pages/dashboard/detail/detail.component';
+
 Amplify.configure({
   Auth:{
     mandatorySignIn:true,
@@ -72,12 +75,14 @@ Amplify.configure({
     DashboardComponent,
     ConverterPipe,
     RiegoComponent,
-    TrazabilidadComponent
+    TrazabilidadComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ChartsModule
 
   ],
   providers: [],

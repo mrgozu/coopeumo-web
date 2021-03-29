@@ -101,7 +101,7 @@ app.get('/em', (req, res) => {
     // Add your code here
     let cantidad = req.headers.cantidad;
     // con.connect();
-    let sql = `SELECT dateTime, from_unixtime(dateTime-10800,"%H:%i, %d/%m/%Y") as date, from_unixtime(dateTime-10800,"%d/%m/%Y") as date2, inHumidity, outHumidity, inTemp, outTemp, heatindex, pressure, rain, UV, windGustDir, windSpeed   FROM weewx.archive order by dateTime desc LIMIT ${cantidad}`;
+    let sql = `SELECT dateTime, from_unixtime(dateTime-10800,"%H:%i, %d/%m/%Y") as date, from_unixtime(dateTime-10800,"%Y-%m-%d") as date2, inHumidity, outHumidity, inTemp, outTemp, heatindex, pressure, rain, UV, windGustDir, windSpeed   FROM weewx.archive order by dateTime desc LIMIT ${cantidad}`;
     con.query(sql, (err, rows, fields) => {
         //  con.end();
         if (err) throw err;

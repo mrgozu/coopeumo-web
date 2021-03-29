@@ -36,6 +36,33 @@ export class BackApiService {
             });
 
   }
+
+  async getAllData():Promise<DataEmModel[]> { 
+    let apiName = 'backendcoopeumo';
+    let path = '/em/1';
+    let myInit = { // OPTIONAL
+       // OPTIONAL
+    };
+    let respuesta:DataEmModel[] = [];
+
+    return await API.get(apiName, path, myInit)
+            .then((datos)=>{
+              console.log(datos[0].dateGrafic);
+              datos.forEach((data) => respuesta.push({ 
+                temperatura:data.outTemp,
+                fechaHora: data.date,
+                fecha: data.dateGrafic,
+                epoch: data.dateTime,
+                sensacionTermica: data.heatindex,
+                indiceUv: data.UV,
+                presionAtmosferica: data.pressure,
+                lluvia: data.rain,
+                humedad: data.outHumidity,
+               }));
+               console.log(respuesta);
+               return respuesta;
+            })
+  }
   
   
  

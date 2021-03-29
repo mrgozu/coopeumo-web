@@ -1,5 +1,8 @@
     <div class="card h-100 m-2 ">
-        <a class="card-header headerEstacion text-white text-center fw-bold text-decoration-none mb-2"> Estación meteorológica  (+) </a>
+        <a class="card-header headerEstacion text-white text-center fw-bold text-decoration-none mb-2" 
+            [routerLink]="['detail','3']"> 
+            Estación meteorológica  (+) 
+        </a>
         <div class="card-body text-white bodyEstacion " >
             <h5 class="card-text text-card-color "><i class="mdi mdi-calendar-clock text-card-color "></i> Fecha: {{estacionMetereologica.fechaHora}}</h5>
             <div class="row " style="white-space: nowrap;">

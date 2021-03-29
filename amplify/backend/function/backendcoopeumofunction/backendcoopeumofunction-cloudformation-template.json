@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-websistemacoopeumo-dev-232905-deployment",
-          "S3Key": "amplify-builds/backendcoopeumofunction-6e6d364f683066305574-build.zip"
+          "S3Key": "amplify-builds/backendcoopeumofunction-70434132506d53594b61-build.zip"
         }
       }
     },

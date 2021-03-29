@@ -1,1 +1,17 @@
-<p>data works!</p>
+<div class="card h-100 m-2 ">
+    <a class="card-header headerEstacion text-white text-center fw-bold text-decoration-none mb-2"> ESTACIÓN METEOROLÓGICA </a>
+    <div class="card-body  text-white bodyEstacion d-flex align-items-center  " >
+        <div class="col" style="white-space: nowrap;">           
+            <div class="row">
+                <div class="col"><h6>Temperatura</h6></div>
+                <div class="col text-end"><h5>{{estacionMetereologica.temperatura| converter: 'C'}}°C</h5></div>
+            </div>
+            <div class="row">
+                <div class="col"><h6>Humedad</h6></div>
+                <div class="col text-end"><h5>{{estacionMetereologica.humedad}}%HR</h5></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,1 +1,49 @@
-<p>graph works!</p>
+<div class="container mt-3">
+    <h1 class="text-center">Consultar datos históricos</h1>
+    <hr>
+    <div class="row">
+        <div class="col" style="padding: 10px; ">
+            <p>Fecha inicio <input [(ngModel)]="dateStart" type="date"  id="start" name="start"> </p>
+            
+
+        </div>
+        
+        <div class="col" style="padding-top: 10px;">
+            <p>Fecha termino <input [(ngModel)]="dateEnd" type="date" id="end" name="end">   </p>
+            
+
+        </div>
+
+        <div class="col " >
+            <button class="btn text-white  h-100 w-100 fw-bold" style="background-color: #2488D0;" (click)="setValue()">Generar gráfico</button>
+        </div>
+        <!-- <div class="col " >
+            <button class="btn text-white  h-100 w-100 fw-bold" style="background-color: #2488D0;" (click)="hideOne()">Ocultar Humedad</button>
+        </div>
+        <div class="col " >
+            <button class="btn text-white  h-100 w-100 fw-bold" style="background-color: #2488D0;" (click)="hideOne()">Ocultar Temperatura</button>
+        </div> -->
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="flex">
+                <div class="flex-item">
+                  <div style="display: block;">
+                  <canvas baseChart width="400" height="200"
+                              [datasets]="lineChartData"
+                              [labels]="lineChartLabels"
+                              [options]="lineChartOptions"
+                              
+                              [legend]="lineChartLegend"
+                              [chartType]="lineChartType">
+                    </canvas>
+                  </div>
+            </div>
+        </div>
+    </div>    
+    
+</div>        
+            
+</div>
+    
